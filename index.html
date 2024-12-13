@@ -155,6 +155,7 @@
         .modal-content .confirm-button {
             background-color: var(--primary-color);
             color: white;
+            margin: 2px;
         }
 
         .modal-content .cancel-button {
@@ -252,6 +253,100 @@
             background-color: #357ab7;
             border-radius: 5px;
         }
+        #myModal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+   
+    backdrop-filter: blur(5px); /* Smooth blur effect */
+}
+
+#modalContent {
+    background: linear-gradient(135deg, #e0f7fa, #b3e5fc); /* Light blue gradient */
+    margin: 10% auto;
+    padding: 30px;
+    border: 2px solid #0288d1; /* Blue border */
+    border-radius: 15px; /* Rounded corners */
+    width: 50%;
+    max-width: 500px; /* Responsive width */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    text-align: left;
+    animation: fadeIn 0.5s ease; /* Animation for appearance */
+}
+
+.close {
+    color: #01579b; /* Dark blue */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+.close:hover,
+.close:focus {
+    color: #0288d1; /* Lighter blue on hover */
+    text-decoration: none;
+}
+
+.form-control {
+    margin: 15px 0;
+    padding: 12px;
+    width: 90%;
+    font-size: 16px;
+    border: 1px solid #0288d1; /* Light blue border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow */
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #01579b; /* Darker blue on focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(1, 87, 155, 0.5); /* Blue glow effect */
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #0288d1, #01579b); /* Gradient button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Shadow for button */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+button:active {
+    transform: translateY(1px); /* Press-down effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
     </style>
 </head>
 <body>
@@ -274,6 +369,7 @@
         <form id="dataForm">
         
         <label for="equipe">Equipe:</label>
+
         <select id="equipe" name="finca" required></select>
 
         <label for="finca" class="animated-label">Finca:</label>
@@ -288,8 +384,9 @@
         <label for="numberPrs" class="animated-label">Number prs:</label>
         <input type="number" id="numberPrs" name="numberPrs" required>
 
-        <button type="button" onclick="submitData()">Envoyer</button>
-
+        <button type="button" onclick="submitData()">Envoyer</button><br>
+        <button id="openModal">EFFECTIF MINI BUSS </button><br>
+        <button type="button" onclick="Contactez()">Contactez-nous</button>
         </form>
     </div>
 
@@ -302,10 +399,63 @@
             <button class="confirm-button" onclick="confirmSubmit()">Confirmer</button>
         </div>
     </div>
-
+    <div id="myModal">
+        <div id="modalContent">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Effectif mini bus</h2>
+            <form id="dataForm1">
+                <label for="combobox">Equipe:</label>
+                <select id="combobox" name="equipe" class="form-control" required>
+                </select><br>
+            
+                <label for="finca">Finca:</label>
+                <input type="text" id="finca" name="finca" value="FINCA 9" class="form-control" readonly><br>
+            
+                <label for="dateInput">Date:</label>
+                <input type="date" id="dateInput" name="dateInput" class="form-control" required><br>
+            
+                <label for="textInput">Effectif:</label>
+                <input type="number" id="textInput" name="effectif" class="form-control" placeholder="Effectif" required><br>
+            
+                <button type="button" class="confirm-button" onclick="confirmSubmi()" style="display: flex; justify-content: center; align-items: center; width: 100px; height: 40px;">
+                    Confirmer
+                  </button>
+              </form>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
+     
+     function confirmSubmi() {
+      var formData = new FormData(document.getElementById('dataForm1'));
+
+      fetch('https://script.google.com/macros/s/AKfycbzmwN2wc24IjJYqlUyO20neyiSTbwppOw4kznvWDXeQVfxV1UMbq-1O8Sfx0yg1hxoBdw/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Data submitted successfully!');
+      })
+      .catch(error => {
+        alert('Error: ' + error);
+      });
+    }
+        const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+        document.getElementById("dateInput").value = today;
+         const modal = document.getElementById("myModal");
+        document.getElementById("openModal").onclick = () => modal.style.display = "block";
+        document.getElementById("closeModal").onclick = () => modal.style.display = "none";
+        window.onclick = (event) => {
+            if (event.target === modal) modal.style.display = "none";
+        };
+        
+       
+         function Contactez() {
+        
+        window.location.href = "https://aroma-rh.github.io/contact/";
+    }
         $(document).ready(function() {
             $('#equipe, #tarea').select2();
         });
@@ -315,6 +465,7 @@
             document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
         }
         document.getElementById("date").value = new Date().toISOString().split('T')[0];
+        
 
         function submitData() {
             const equipe = document.getElementById("equipe").value;
@@ -373,8 +524,8 @@
         }
 
         
-    // استدعاء Google Apps Script لجلب البيانات
-         fetch('https://script.google.com/macros/s/AKfycbxlhFXMQ1bViOud3KiqtGFl_iLLDUo8Sz1OOq1S_w9Hvp-ABksd8GuaUmt7tEC_HaVdkw/exec')
+ 
+         fetch('https://script.google.com/macros/s/AKfycbxoy923OwLPZA7S2wq5qOjcp8xA1IVc-28vxSMXDCqobxt9keI_NRfQLwe9E1Y1w12OoQ/exec')
       .then(response => response.json())
       .then(data => {
         const comboBox = document.getElementById('equipe');
@@ -388,10 +539,22 @@
 
        
 
-         fetch('https://script.google.com/macros/s/AKfycbyGbFHIPmWcwgdysHtRXNsszmPSL66CYTYuP4Cj5epsHN1iuCbceQAbwxTSyZ0UJu6CDA/exec')
+         fetch('https://script.google.com/macros/s/AKfycbxLSEPXBHctMIigbNugYuXB2DvUeHRUp0dxug3-bhoPP0_HduBj1LbSCdpl_UA25p1zdw/exec')
       .then(response => response.json())
       .then(data => {
         const comboBox = document.getElementById('tarea');
+        data.forEach(item => {
+          const option = document.createElement('option');
+          option.value = item;
+          option.textContent = item;
+          comboBox.appendChild(option);
+        });
+      });
+
+      fetch('https://script.google.com/macros/s/AKfycbxp1jPE24WoceMsU3pHIR0zj-8fnlSj0CTaQ5OBI1La8jMiwTYrhDd0TZJUSUfo0NqW-A/exec')
+      .then(response => response.json())
+      .then(data => {
+        const comboBox = document.getElementById('combobox');
         data.forEach(item => {
           const option = document.createElement('option');
           option.value = item;
