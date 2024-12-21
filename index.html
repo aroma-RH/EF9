@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Effectif</title>
+    <title>EFFECTIF CAMPO</title>
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
@@ -14,12 +14,7 @@
             --text-color: #333;
         }
 
-        [data-theme="dark"] {
-            --primary-color: #6bb9f0;
-            --secondary-color: #333;
-            --background-color: #1a1a1a;
-            --text-color: #ddd;
-        }
+       
 
         body {
             font-family: Arial, sans-serif;
@@ -31,31 +26,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Navigation Menu */
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 15px;
-            background-color: var(--secondary-color);
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            border-radius: 8px;
-            position: relative;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
+        
 
         h1 {
             text-align: center;
@@ -78,10 +49,12 @@
             font-size: 1.1rem;
             margin-bottom: 8px;
             display: block;
+            font-weight: bold;
         }
 
         .form-container input, .form-container select {
-            width: 100%;
+            width: 99%;
+            font-weight: bold;
             padding: 12px;
             margin: 12px 0;
             border-radius: 6px;
@@ -89,6 +62,7 @@
             font-size: 1rem;
             box-sizing: border-box;
         }
+        
 
         .form-container button {
             background-color: var(--primary-color);
@@ -101,7 +75,7 @@
             width: 100%;
             transition: background-color 0.3s ease;
         }
-
+       
         .form-container button:hover {
             background-color: #357ab7;
         }
@@ -186,101 +160,38 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        /* Navigation Menu Styles */
-        .navbar {
-            display: flex;
-            margin-bottom: 30px;
-            
-            justify-content: center;
-            background-color: var(--primary-color);
-            padding: 10px;
-            
-        }
-
-        .navbar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar li {
-            position: relative;
-            margin: 0 2px;
-        }
-
-        .navbar a {
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-            padding: 10px;
-            font-size: 1rem;
-        }
-
-        .navbar li:hover > a {
-            background-color: #357ab7;
-            border-radius: 5px;
-        }
-
-        /* Submenu */
-        .navbar li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--primary-color);
-            padding: 10px 0;
-            min-width: 150px;
-            border-radius: 5px;
-            z-index: 1000;
-        }
-
-        .navbar li:hover ul {
-            display: block;
-        }
-
-        .navbar li ul li {
-            margin: 0;
-        }
-
-        .navbar li ul a {
-            display: block;
-            padding: 8px 15px;
-            font-size: 0.9rem;
-        }
-
-        .navbar li ul a:hover {
-            background-color: #357ab7;
-            border-radius: 5px;
-        }
+      
+      
         #myModal {
-    display: none;
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-   
-    backdrop-filter: blur(5px); /* Smooth blur effect */
-}
+              display: none;
+              position: fixed;
+              z-index: 10;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: auto;
+              backdrop-filter: blur(5px);
+                 }
 
 #modalContent {
-    background: linear-gradient(135deg, #e0f7fa, #b3e5fc); /* Light blue gradient */
+    background: linear-gradient(135deg, #e0f7fa, #b3e5fc); 
     margin: 10% auto;
     padding: 30px;
-    border: 2px solid #0288d1; /* Blue border */
-    border-radius: 15px; /* Rounded corners */
+    border: 2px solid #0288d1; 
+    border-radius: 15px; 
     width: 50%;
-    max-width: 500px; /* Responsive width */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    font-weight: bold;
+    max-width: 500px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
     text-align: left;
-    animation: fadeIn 0.5s ease; /* Animation for appearance */
+    animation: fadeIn 0.5s ease;
 }
+ 
+
 
 .close {
-    color: #01579b; /* Dark blue */
+    color: #01579b; 
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -290,7 +201,7 @@
 
 .close:hover,
 .close:focus {
-    color: #0288d1; /* Lighter blue on hover */
+    color: #0288d1; 
     text-decoration: none;
 }
 
@@ -299,16 +210,16 @@
     padding: 12px;
     width: 90%;
     font-size: 16px;
-    border: 1px solid #0288d1; /* Light blue border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow */
+    border: 1px solid #0288d1; 
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease;
 }
 
 .form-control:focus {
-    border-color: #01579b; /* Darker blue on focus */
+    border-color: #01579b; 
     outline: none;
-    box-shadow: 0 0 8px rgba(1, 87, 155, 0.5); /* Blue glow effect */
+    box-shadow: 0 0 8px rgba(1, 87, 155, 0.5); 
 }
 
 button {
@@ -317,25 +228,25 @@ button {
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(135deg, #0288d1, #01579b); /* Gradient button */
+    background: linear-gradient(135deg, #0288d1, #01579b); 
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Shadow for button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); 
 }
 
 button:active {
-    transform: translateY(1px); /* Press-down effect */
+    transform: translateY(1px); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Fade-in animation */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -346,46 +257,217 @@ button:active {
         transform: translateY(0);
     }
 }
+.add-button {
+            background-color: #f0e008;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
+        .options {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            flex-direction: column;
+        }
+
+        .options button {
+            background-color: #bb920b;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .modalADD {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(62, 148, 144, 0.973);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgb(0, 0, 0);
+            width: 300px;
+        }
+
+        .modalADD.active {
+            display: block;
+        }
+
+        .modalADD input {
+            
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .modalADD button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* menu boton */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #0059b3;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0066cc;
+            transform: scale(1.1); 
+        }
+
+        
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px; 
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(to bottom, #0059b3, #003366);
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+            transition: left 0.4s ease; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 999;
+        }
+
+        .sidebar.open {
+            left: 0; 
+        }
+
+        
+        .sidebar h3 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #cce7ff; 
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 20px;
+            margin-top: 45px;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #cce7ff;
+            
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+        
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #004080;
+            color: #ffffff;
+        }
+
+      
+        .close-arrow {
+            cursor: pointer;
+            color: #cce7ff;
+            font-size: 30px;
+            background: transparent;
+            border: none;
+            position: absolute;
+            top: 10px;
+            right: 10px; 
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .close-arrow:hover {
+            color: #ffffff;
+            transform: rotate(180deg); 
+        }
     </style>
 </head>
 <body>
 
     
 
-    <!-- Navigation Menu -->
+    <!-- menu boton -->
+    <button class="toggle-btn" id="toggleBtn">☰ Menu</button>
+    <div class="sidebar" id="sidebar">
+       <button class="close-arrow" id="closeArrow">⮜</button>
+       <h3>Menu de Navigation</h3>
+       <ul>
+           <li><a href="https://aroma-rh.github.io/F20GFHFGHGFHGFHHGFH/">Effectif</a></li>
+           <li><a href="https://aroma-rh.github.io/LA-ABSE/">La Base</a></li>
+           <li><a href="#">Methode de paiement</a></li>
+           <li><a href="https://aroma-rh.github.io/POINTAGE/">Pointage</a></li>
+           
+       </ul>
+    </div><br><br><br><br>
     
-
+<!-- effectif -->
     <div class="form-container">
-        <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="https://aroma-rh.github.io/F09SHGFGFDJLM-M-OPITYUTEEZ/">Effectif</a></li>
-                <li><a href="https://aroma-rh.github.io/LA-ABSE/">La Base</a></li>
-                <li><a href="#">Methode de paiement</a></li>
-                <li><a href="https://aroma-rh.github.io/POINTAGE/">Pointage</a></li>
-            </ul>
-        </nav>
+       
+        
+       
         <form id="dataForm">
         
         <label for="equipe">Equipe:</label>
 
-        <select id="equipe" name="finca" required></select>
+        <select id="equipe" name="finca" required></select><br><br>
 
         <label for="finca" class="animated-label">Finca:</label>
-        <input type="text" id="finca" name="numberPrs" value="FINCA 9" readonly>
+        <input type="text" id="finca" name="numberPrs" value="Finca 9" readonly>
 
         <label for="date" class="animated-label">Date:</label>
         <input type="date" id="date" name="date" value="" required>
 
         <label for="tarea" class="animated-label">Tarea:</label>
-        <select id="tarea" name="tarea" required></select>
+        <select id="tarea" name="tarea" required></select><br><br>
 
         <label for="numberPrs" class="animated-label">Number prs:</label>
         <input type="number" id="numberPrs" name="numberPrs" required>
 
-        <button type="button" onclick="submitData()">Envoyer</button><br>
-        <button id="openModal">EFFECTIF MINI BUSS </button><br>
+        <button type="button" onclick="submitData()">Envoyer</button>
+        <button id="openModal">Effectif mini bus </button>
         <button type="button" onclick="Contactez()">Contactez-nous</button>
         </form>
     </div>
@@ -399,6 +481,7 @@ button:active {
             <button class="confirm-button" onclick="confirmSubmit()">Confirmer</button>
         </div>
     </div>
+    <!-- mini bus -->
     <div id="myModal">
         <div id="modalContent">
             <span class="close" id="closeModal">&times;</span>
@@ -409,7 +492,7 @@ button:active {
                 </select><br>
             
                 <label for="finca">Finca:</label>
-                <input type="text" id="finca" name="finca" value="FINCA 9" class="form-control" readonly><br>
+                <input type="text" id="finca" name="finca" value="Finca 9" class="form-control" readonly><br>
             
                 <label for="dateInput">Date:</label>
                 <input type="date" id="dateInput" name="dateInput" class="form-control" required><br>
@@ -423,10 +506,139 @@ button:active {
               </form>
         </div>
     </div>
+    
+
+    <button class="add-button" onclick="toggleOptions()">+</button>
+    <div class="options" id="options">
+        <button onclick="openModal('modal-equipe')">Equipe</button>
+        <button onclick="openModal('modal-tache')">Tache</button>
+    </div>
+
+    <!-- Equipe -->
+    <div class="modalADD" id="modal-equipe">
+        <form id="dataFormequipe">
+            <h2>AJOUTER UNE ÉQUIPE</h2>
+            <label for="equipe">Equipe:</label><br>
+            <input id="Equipe" name="equipe" class="form-control" required>
+            </input><br>
+            <label for="finca">Finca:</label><br>
+            <input type="text" id="finca" name="finca" value="Finca 9" class="form-control" readonly><br>
+        
+            <button type="button" class="confirm-button" onclick="confirmequipe()" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 40px;">
+                Confirmer
+              </button>
+              <button style="display: flex; justify-content: center; align-items: center; width: 100%; height: 40px;" onclick="closeModal('modal-equipe')">Anuuler</button>
+
+          </form>
+    </div>
+
+    <!-- Tache -->
+    <div class="modalADD" id="modal-tache">
+        <form id="dataFormtarea">
+            <h2>AJOUTER UNE TÂCHE</h2>
+            
+            <label for="tache">Tache:</label><br>
+            <input id="tache" name="tache" class="form-control" required>
+            </input><br>
+        
+            <label for="finca">Finca:</label><br>
+            <input type="text" id="finca" name="finca" value="Finca 9" class="form-control" readonly><br>
+        
+            
+        
+            <button type="button" class="confirm-button" onclick="confirmtarea()" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 40px;">
+                Confirmer
+              </button>
+              <button style="display: flex; justify-content: center; align-items: center; width: 100%; height: 40px;" onclick="closeModal('modal-tache')">Anuuler</button>
+          </form>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-     
+       const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const closeArrow = document.getElementById('closeArrow');
+
+        // fath sidbar
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.add('open');
+            toggleBtn.style.transform = 'translateX(320px)'; 
+        });
+
+        // ighla9 Sidebar
+        closeArrow.addEventListener('click', () => {
+            closeSidebar();
+        });
+
+        // ighla9 Sidebar Function
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            toggleBtn.style.transform = 'translateX(0)'; 
+        }
+
+       
+        document.addEventListener('click', (event) => {
+            if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                closeSidebar();
+            }
+        });
+
+
+     function toggleOptions() {
+            const options = document.getElementById('options');
+            options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+            const inputs = modal.querySelectorAll('input');
+            inputs.forEach(input => input.value = "");
+        }
+
+        
+
+        function confirmtarea() {
+      var formData = new FormData(document.getElementById('dataFormtarea'));
+
+      fetch('https://script.google.com/macros/s/AKfycbyJOQQb4-eCiOOWQeF8gwfZ_dIauOau2EfJjTRNdWnF1w9v7ShY4fEbjI3oOVuNv2rvSg/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Données soumises avec succès !');
+      })
+      .catch(error => {
+        alert('Error: ' + error);
+      });
+    }
+    function confirmequipe() {
+      var formData = new FormData(document.getElementById('dataFormequipe'));
+
+      fetch('https://script.google.com/macros/s/AKfycbwks_VIryulz7AhgAeCI62tzkl0BLkMBMIUdayBmurhH4jAMyM2haJKmXF24x-7rHTy/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Données soumises avec succès !');
+      })
+      .catch(error => {
+        alert('Error: ' + error);
+      });
+    }
+
+
+
+
+
      function confirmSubmi() {
       var formData = new FormData(document.getElementById('dataForm1'));
 
@@ -436,7 +648,7 @@ button:active {
       })
       .then(response => response.json())
       .then(data => {
-        alert('Data submitted successfully!');
+        alert('Données soumises avec succès !');
       })
       .catch(error => {
         alert('Error: ' + error);
